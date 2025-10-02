@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #ffb900;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img id="logo" src="logo.png"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown ms-auto">
+                        <a class="btn btn-outline-dark dropdown-toggle fw-bold" id="dm" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Danh Mục
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Đồ Điện Tử</a></li>
+                            <li><a class="dropdown-item" href="#">Văn Phòng Phẩm</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex flex-grow-1 me-3 ms-3" role="search">
+                    <div class="input-group">
+                        <input type="search" class="form-control" placeholder="Điện Thoại Iphone 17 Pro Max Plus 256GB"
+                            aria-label="Search" />
+                        <button class="btn btn-success px-4" type="submit">🔍</button>
+                    </div>
+                </form>
+                <ul class="navbar-nav me-2 ms-3"><a class="text-decoration-none" href="GioHang.html">
+                        <h3>🛒</h3>
+                    </a></ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown ms-auto" id="tk">
+                        <a class="dropdown-toggle text-decoration-none fw-semibold text-dark" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            🙍‍♂️Tài Khoản
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Quản Lý Tài Khoản</a></li>
+                            <li><a class="dropdown-item" href="#">Đổi Mật Khẩu</a></li>
+                            
+                            <li><a class="dropdown-item" href="QLDonHang.html">Đơn Hàng Của Bạn</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#">Đăng Xuất</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2 class="mb-3">Danh Sách Hóa Đơn Đặt Hàng</h2>
+        <table class="table table-bordered table-hover">
+            <thead class="table-warning">
+                <tr>
+                    <th>Mã Hóa Đơn</th>
+                    <th>Ngày Đặt</th>
+                    <th>Tổng Tiền</th>
+                    <th>Trạng Thái</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HD001</td>
+                    <td>01/10/2025</td>
+                    <td>5.000.000₫</td>
+                    <td>Đã giao</td>
+                    <td>
+                        <button class="btn btn-info btn-sm" onclick="xemChiTiet('HD001')">Xem chi tiết</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>HD002</td>
+                    <td>28/09/2025</td>
+                    <td>2.500.000₫</td>
+                    <td>Đang xử lý</td>
+                    <td>
+                        <button class="btn btn-info btn-sm" onclick="xemChiTiet('HD002')">Xem chi tiết</button>
+                    </td>
+                </tr>
+                <!-- Thêm các hóa đơn khác tại đây -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal chi tiết hóa đơn -->
+    <div class="modal fade" id="modalChiTiet" tabindex="-1" aria-labelledby="modalChiTietLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalChiTietLabel">Chi Tiết Hóa Đơn</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+          </div>
+          <div class="modal-body" id="noiDungChiTiet">
+            <!-- Nội dung chi tiết hóa đơn sẽ được hiển thị ở đây -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        function xemChiTiet(maHD) {
+            // Dữ liệu mẫu, bạn có thể thay bằng dữ liệu động từ server
+            const chiTiet = {
+                'HD001': `
+                    <strong>Mã hóa đơn:</strong> HD001<br>
+                    <strong>Ngày đặt:</strong> 01/10/2025<br>
+                    <strong>Sản phẩm:</strong> iPhone 17 Pro Max x1<br>
+                    <strong>Tổng tiền:</strong> 5.000.000₫<br>
+                    <strong>Trạng thái:</strong> Đã giao
+                `,
+                'HD002': `
+                    <strong>Mã hóa đơn:</strong> HD002<br>
+                    <strong>Ngày đặt:</strong> 28/09/2025<br>
+                    <strong>Sản phẩm:</strong> Bút bi Thiên Long x10<br>
+                    <strong>Tổng tiền:</strong> 2.500.000₫<br>
+                    <strong>Trạng thái:</strong> Đang xử lý
+                `
+            };
+            document.getElementById('noiDungChiTiet').innerHTML = chiTiet[maHD] || 'Không tìm thấy hóa đơn!';
+            var modal = new bootstrap.Modal(document.getElementById('modalChiTiet'));
+            modal.show();
+        }
+    </script>
+</body>
+<style>
+    /* #search{
+    max-width: 100%;
+    width:800px;
+} */
+    #logo {
+        max-width: 200px
+    }
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+/* Riêng Tài khoản: ép căn phải */
+#tk:hover .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+</style>
+
+</html>
