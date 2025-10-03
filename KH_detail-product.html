@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -33,70 +33,6 @@
 
         .top-header a:hover {
             opacity: 0.8;
-        }
-
-        /* Main Header */
-        .main-header {
-            background: linear-gradient(0, var(--shopee-secondary), var(--shopee-primary));
-            padding: 25px 0;
-        }
-
-        .logo {
-            color: white;
-            font-size: 36px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .search-box .form-control {
-            border: none;
-            padding: 12px 15px;
-        }
-
-        .search-box .btn {
-            background: var(--shopee-secondary);
-            border: none;
-            color: white;
-            padding: 12px 25px;
-        }
-
-        .cart-icon {
-            color: white;
-            font-size: 28px;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .cart-badge {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: white;
-            color: var(--shopee-primary);
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 11px;
-            font-weight: bold;
-        }
-
-        /* Breadcrumb */
-        .breadcrumb {
-            background: white;
-            padding: 15px 0;
-            margin: 0;
-        }
-
-        .breadcrumb a {
-            color: #555;
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            color: var(--shopee-primary);
         }
 
         /* Product Detail */
@@ -464,61 +400,14 @@
     </style>
 </head>
 <body>
-    <!-- Top Header -->
-    <div class="top-header">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    <a href="#">Kênh Người Bán</a>
-                    <a href="#">Tải ứng dụng</a>
-                    <a href="#">Kết nối: <i class="bi bi-facebook"></i> <i class="bi bi-instagram"></i></a>
-                </div>
-                <div>
-                    <a href="#"><i class="bi bi-bell"></i> Thông báo</a>
-                    <a href="#"><i class="bi bi-question-circle"></i> Hỗ trợ</a>
-                    <a href="#"><i class="bi bi-globe"></i> Tiếng Việt</a>
-                    <a href="#">Đăng ký</a>
-                    <a href="#">Đăng nhập</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Header -->
-    <div class="main-header">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-auto">
-                    <a href="java5_index.html" class="logo">Shopee</a>
-                </div>
-                <div class="col">
-                    <div class="search-box d-flex">
-                        <input type="text" class="form-control" placeholder="Shopee bao ship 0Đ - Đăng ký ngay!">
-                        <button class="btn"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="cart-icon">
-                        <i class="bi bi-cart3"></i>
-                        <span class="cart-badge">3</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="navbar"></div>
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <div class="container">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="java5_index.html">Shopee</a></li>
-                    <li class="breadcrumb-item"><a href="#" id="breadcrumb-category">Danh mục</a></li>
-                    <li class="breadcrumb-item active" id="breadcrumb-product">Sản phẩm</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
+    <script>
+        fetch("KH_Navbar.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("navbar").innerHTML = data);
+    </script> 
 
     <!-- Product Detail -->
     <div class="container">

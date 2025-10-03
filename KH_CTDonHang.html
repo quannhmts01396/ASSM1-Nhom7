@@ -15,61 +15,20 @@
 </head>
 
 <body class="bg-light">
-    <!-- Navbar/Header -->
-    <div class="main-header" style="background: linear-gradient(90deg, #ffe066, #ffd700); padding: 25px 0;">
-        <div class="container">
-            <div class="d-flex align-items-center justify-content-between">
-                <!-- Logo -->
-                <a href="" class="logo d-flex align-items-center me-3">
-                    <img src="../anh/logo (1).png" id="logo" style="max-width:200px;">
-                </a>
-                <!-- Search box -->
-                <div class="flex-grow-1 mx-3">
-                    <div class="search-box d-flex">
-                        <input type="text" class="form-control" placeholder="Shopee bao ship 0Đ - Đăng ký ngay!">
-                        <button class="btn" style="background:#43a047; color:#fff;"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-                <!-- Cart & Account -->
-                <div class="d-flex align-items-center gap-3">
-                    <div class="cart-icon position-relative">
-                        <i class="bi bi-cart3 fs-4" style="color:#43a047;"></i>
-                        <span class="cart-badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-white text-success border border-success"
-                            style="font-size:12px;">3</span>
-                    </div>
-                    <!-- Account Dropdown -->
-                    <div class="dropdown">
-                        <a class="btn d-flex align-items-center px-3 py-2 bg-white rounded-pill shadow-sm fw-bold"
-                            href="#" id="accountDropdown" data-bs-toggle="dropdown" aria-expanded="false"
-                            style="font-size:16px;">
-                            <span class="me-2 d-flex align-items-center justify-content-center"
-                                style="width:32px; height:32px; background:linear-gradient(135deg,#ffe066,#43a047); border-radius:50%;">
-                                <i class="bi bi-person-fill" style="color:#43a047; font-size:22px;"></i>
-                            </span>
-                            Tài Khoản
-                            <i class="bi bi-caret-down-fill ms-2" style="font-size:14px;"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
-                            <li><a class="dropdown-item" href="../login.html">Đăng nhập</a></li>
-                            <li><a class="dropdown-item" href="#">Đăng ký</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Quản Lý Tài Khoản</a></li>
-                            <li><a class="dropdown-item" href="#">Đổi Mật Khẩu</a></li>
-                            <li><a class="dropdown-item" href="#">Đơn Hàng Của Bạn</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-danger" href="#">Đăng Xuất</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Main Header -->
+    <div id="navbar"></div>
+
+    <script>
+        fetch("KH_Navbar.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("navbar").innerHTML = data);
+    </script>    
 
     <h2 class="m-3 text-center">Thông Tin Đơn Hàng</h2>
     <div style="max-width: 500px;" class="mx-auto">
         <div class="card p-3 m-2">
             <div class="d-flex justify-content-center align-items-center my-1">
-                <span><img src="chuot.png" style="width: 400px;"></span>
+                <span><img src="anh/chuot.png" style="width: 400px;"></span>
             </div>
             <div class="d-flex justify-content-between align-items-center my-1">
                 <span>Chuột Gaming Siêu Cấp Vip Pro</span>

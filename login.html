@@ -116,23 +116,41 @@
     <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="/forgot-password" method="post">
+                <form action="" method="post">
                     <div class="modal-header">
                         <h5 class="modal-title">Quên mật khẩu</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label>Tài khoản hoặc Email</label>
-                            <input type="text" class="form-control" name="usernameOrEmail" required>
-                        </div>
-                        <div class="mb-3">
-                            <label>Email xác nhận</label>
+                            <label>Email</label>
                             <input type="email" class="form-control" name="email" required>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Xác nhận</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Điều khoản Modal -->
+    <div class="modal fade" id="about" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="" method="post">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Điều khoản sử dụng</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label>PINE SHOP là dự án tâm huyết của nhóm 2 trong môn học SOF3022</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                     </div>
                 </form>
@@ -212,7 +230,7 @@
                         <div class="form-check mb-3">
                             <input class="form-check-input" type="checkbox" id="termsCheck" name="terms" required>
                             <label class="form-check-label" for="termsCheck">
-                                Tôi đồng ý với <a href="#" target="_blank">điều khoản sử dụng</a>
+                                Tôi đồng ý với <a href="#" data-bs-toggle="modal" data-bs-target="#about">điều khoản sử dụng</a>
                             </label>
                         </div>
                         <div class="d-grid">
